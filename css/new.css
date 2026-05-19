@@ -1,0 +1,66 @@
+.interview-name,
+.interview-name .interview--ttl {
+ writing-mode: horizontal-tb !important;
+ white-space: nowrap !important;
+ width: auto !important;
+ min-width: max-content !important;
+ display: block !important;
+ flex-shrink: 0 !important;
+ word-break: keep-all !important;
+}
+  /* 修正ポイント：スライダー全体の高さを制限する */
+  .swiper {
+    width: 100%;
+    max-width: 1200px; /* 横幅の最大値 */
+    
+    /* * --- ここを修正 ---
+     * スライダーの高さの最大値を決めます。
+     * 例えば、「画面の高さの70%」にするなど。
+     */
+    max-height: 70vh; /* 'vh'は画面の高さを基準にした単位です。70vhは画面の70%の意味。 */
+    height: auto;
+    
+    /* これを入れると、はみ出した画像が綺麗に隠れます */
+    overflow: hidden; 
+  }
+
+  /* 修正ポイント：画像がその枠内で綺麗に収まるようにする */
+  .img-cover {
+    width: 100%;
+    
+    /* * --- ここを修正 ---
+     * 画像の高さも、親要素（.swiper）と同じに合わせる 
+     */
+    height: 100%;
+    
+    /* * これはそのまま。画像を枠に合わせつつ、
+     * アスペクト比を保って切り抜く設定 
+     */
+    object-fit: cover; 
+    
+    /* 画像の中央を表示するように設定（任意） */
+    object-position: center; 
+  }
+  
+  /* Swiperコンテナの中にあるラッパーも高さを親に合わせる */
+  .swiper-wrapper {
+    height: 100%;
+  }
+  .swiper-slide {
+    height: 100%;
+  }
+  .swiper {
+    /* ここ！1200pxだとデカすぎるので、例えば500pxくらいにしてみます */
+    width: 100%;
+    max-width: 500px; 
+    
+    /* 高さは自動か、お好みで固定してください */
+    height: auto;
+    overflow: hidden;
+  }
+
+  .img-cover {
+    width: 100%;
+    height: 100%; /* 高さを出したいなら 500px など数値を入れてもOK */
+    object-fit: cover;
+  }
