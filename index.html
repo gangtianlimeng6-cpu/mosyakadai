@@ -10,6 +10,113 @@
     <link rel="stylesheet" media="print" href="https://recruit.shoushin.co.jp/wp/wp-content/themes/standard_sass/css/print.css">
     <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="js/index.js">
+    <style>
+        /* ===================================================
+   1. 古いGIF画像の設定を完全に無効化（強制リセット）
+   =================================================== */
+.hero [class*="hero--gif"] {
+  position: static !important;
+  transform: none !important;
+  margin: 0 !important;
+  display: block !important;
+}
+
+/* ===================================================
+   2. 全体の外枠（左の赤いバーを避ける設定）
+   =================================================== */
+.shoshin-container {
+  width: 100% !important;
+  max-width: 1100px !important;
+  margin: 0 auto !important;
+  padding-left: 140px !important; /* 左のメニューバーを絶対に踏まないための余白 */
+  padding-right: 40px !important;
+  box-sizing: border-box !important;
+}
+
+#recruit-main-visual {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 140px !important;           /* 1行目と2行目の上下の隙間 */
+  margin: 80px auto !important;
+  width: 100% !important;
+  position: relative !important;
+}
+
+/* 行の共通設定：裏での中央寄せ命令を拒否する */
+.visual-row {
+  display: block !important;       /* flexをやめてblockにし、絶対配置の基準にする */
+  position: relative !important;
+  width: 100% !important;
+  height: 120px !important;        /* 文字の高さ分のスペースを確保 */
+}
+.row-top { max-width: 650px !important; }
+.row-bottom { max-width: 850px !important; }
+
+/* ===================================================
+   3. 巨大な赤い文字の配置（％で強制的に左右に引き離す）
+   =================================================== */
+.v-char {
+  font-size: 150px !important;    /* 文字のサイズを最初の画像に合わせて巨大化 */
+  font-weight: 900 !important;
+  color: #D61E3B !important;
+  position: absolute !important;   /* 行の中で完全に位置を固定する */
+  top: 0 !important;
+  line-height: 1 !important;
+  display: inline-block !important;
+  width: 120px !important;
+  text-align: center !important;
+}
+
+/* --- 1行目（K A K）の位置指定 --- */
+.c-k1 { left: 0% !important; }
+.c-a  { left: 45% !important; }
+.c-k2 { left: 90% !important; }
+
+/* --- 2行目（U U I N O）の位置指定 --- */
+.c-u1 { left: 0% !important; }
+.c-u2 { left: 30% !important; }
+.c-n  { left: 60% !important; }
+.c-o  { left: 90% !important; }
+/* ===================================================
+   4. 人物の共通設定（文字の上に重ねる）
+   =================================================== */
+.v-person {
+  position: absolute !important;
+  bottom: -10px !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important; /* 文字の真ん中足元に集める */
+  z-index: 10 !important;
+  width: max-content !important;
+}
+
+/* 人物のサイズ感を文字に合わせる */
+.v-person img {
+  height: 1.5em !important;
+  width: auto !important;
+  display: block !important;
+}
+
+/* ===================================================
+   5. 各人物のポーズに合わせたミリ単位の位置調整
+   =================================================== */
+/* 1行目 K：電話する男性（文字の左側に配置） */
+.vp-1 { bottom: 0; left: -50px; transform: none !important; z-index: 10 !important; }
+
+/* 1行目 A：植物を持って座る女性（文字の右下あたりに腰掛けさせる） */
+.vp-2 { bottom: 10px; left: 50%; transform: translateX(-50%); z-index: 10 !important; }
+
+/* 1行目 K：カバン持ちガッツポーズ男性（文字の右側に立たせる） */
+.vp-3 { bottom: 0; left: auto; right: -50px; transform: none !important; z-index: 10 !important; }
+
+/* 2行目 U（左）：植物を持って座る女性（文字の左下に重ねる） */
+.vp-4 { bottom: 10px; left: 0px; transform: none !important; z-index: 10 !important; }
+
+/* 2行目 U（右）：大の字ジャンプ男性（文字の真ん中に固定） */
+.vp-5 { bottom: 10px; left: 50%; transform: translateX(-50%); z-index: 10 !important; }
+
+/* 2行目 N：植物を渡す女性（Nの右側に大きくはみ出させてOに近づける） */
+.vp-6 { bottom: 0; left: auto; right: -70px; transform: none !important; z-index: 10 !important; }
+</style>
 </head>
 <body class="home bg-off_wh" id="top">
     <svg aria-hidden="true" style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -72,39 +179,34 @@
             <a href="#cta">ENTRY !</a>
         </div>
     </header>
-    <div class="container">
-        <main>
-            <div class="hero">
-                <h2 class="hero--ttl font-en fz-18 txt-ctr">
-                    <span>
-                        <span class="txt">NEW GRADUATE / MID-CAREER</span>
-                    </span>
-                    <span class="hero--recruitment"></span>
-                </h2>
-                <div class="shoshin-container">
-    <div id="lottie">
-        <div class="row row-1">
-            <span class="s1 s">K<span class="person person-p1"></span></span>
-            <span class="h1 h">A<span class="person person-p2"></span></span>
-            <span class="o">K<span class="person person-p3"></span></span>
+    <div class="shoshin-container">
+    <div id="recruit-main-visual">
+        <div class="visual-row row-top">
+            <span class="v-char c-k1">K
+                <span class="v-person vp-1"><img src="img/001.gif" alt="電話する男性"></span>
+            </span>
+            <span class="v-char c-a">A
+                <span class="v-person vp-2"><img src="img/002.gif" alt="座る女性"></span>
+            </span>
+            <span class="v-char c-k2">K
+                <span class="v-person vp-3"><img src="img/003.gif" alt="カバンを持つ男性"></span>
+            </span>
         </div>
         
-        <div class="row row-2">
-            <span class="s2 s">U<span class="person person-p4"></span></span>
-            <span class="h2 h">U<span class="person person-p5"></span></span>
-            <span class="i">N</span>
-            <span class="n">O<span class="person person-p6"></span></span>
+        <div class="visual-row row-bottom">
+            <span class="v-char c-u1">U
+                <span class="v-person vp-4"><img src="img/004.gif" alt="座る女性2"></span>
+            </span>
+            <span class="v-char c-u2">U
+                <span class="v-person vp-5"><img src="img/005.gif" alt="ジャンプする男性"></span>
+            </span>
+            <span class="v-char c-n">N
+                <span class="v-person vp-6"><img src="img/006.gif" alt="植物を渡す女性"></span>
+            </span>
+            <span class="v-char c-o">O</span>
         </div>
     </div>
 </div>
-                <img src="img/装飾.png" alt="植物" width="127" height="303" class="hero--img">
-                <img src="img/001.gif" alt="人物1" width="187" height="467" class="hero--gif01 hero--gif">
-                <img src="img/002.gif" alt="人物2" width="140" height="329" class="hero--gif02 hero--gif">
-                <img src="img/003.gif" alt="人物3" width="251" height="455" class="hero--gif03 hero--gif">
-                <img src="img/004.gif" alt="人物4" width="170" height="330" class="hero--gif04 hero--gif">
-                <img src="img/005.gif" alt="人物5" width="337" height="533" class="hero--gif05 hero--gif">
-                <img src="img/006.gif" alt="人物6" width="208" height="411" class="hero--gif06 hero--gif">
-            </div>
             <!-- .hero -->
             <div class="hero--bg"></div>
             <div id="wrapper">
