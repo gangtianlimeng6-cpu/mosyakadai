@@ -1,0 +1,1179 @@
+.hero {
+  position: relative;
+  height: 53.125rem;
+  z-index: 3;
+}
+@media print, screen and (min-width: 120.0625em) {
+  .hero {
+    width: 112.6875rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+@media screen and (max-width: 47.9375em) {
+  .hero {
+    width: 25rem;
+    height: 34.2857142857rem;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+.hero--ttl {
+  position: absolute;
+  top: 10rem;
+  white-space: nowrap;
+}
+@media print, screen and (min-width: 48em) {
+  .hero--ttl {
+    right: 7.0625rem;
+  }
+}
+@media screen and (max-width: 47.9375em) {
+  .hero--ttl {
+    top: 45%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.2857142857rem;
+    opacity: 0.2;
+    z-index: -1;
+  }
+}
+.hero--ttl span:not(.hero--recruitment) {
+  position: relative;
+  display: block;
+  overflow: hidden;
+}
+.hero--ttl span:not(.hero--recruitment)::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--bg-main);
+  transform: translateX(-100%);
+  animation: bg 1.2s ease-in-out 0.6s forwards;
+}
+.hero--ttl .txt {
+  opacity: 0;
+  animation: show 0s ease-in-out 1.2s forwards;
+}
+
+.hero--recruitment {
+  display: block;
+  margin-top: -1.5rem;
+  width: 21.25rem;
+  height: 6.25rem;
+  opacity: 1;
+  transition: var(--transit-default);
+}
+@media screen and (max-width: 47.9375em) {
+  .hero--recruitment {
+    width: 24.2857142857rem;
+    height: 7.1428571429rem;
+  }
+}
+.hero--recruitment.active {
+  opacity: 1;
+}
+
+.hero--img,
+.hero--gif {
+  position: absolute;
+}
+
+.hero--img {
+  top: 9.25rem;
+  left: 16.25rem;
+}
+@media screen and (max-width: 47.9375em) {
+  .hero--img {
+    width: 2.8571428571rem;
+    top: 6.5714285714rem;
+    left: 5.6428571429rem;
+  }
+}
+
+.hero--gif {
+  transition: var(--transit-default);
+  opacity: 1;
+}
+.hero--gif.active {
+  opacity: 1;
+}
+
+.hero--gif01 {
+  top: 17.4375rem;
+  left: 6.25rem;
+}
+@media screen and (max-width: 47.9375em) {
+  .hero--gif01 {
+    top: 9.1428571429rem;
+    left: 0.4285714286rem;
+    width: 4.7857142857rem;
+  }
+}
+
+.hero--gif02 {
+  top: 29.8125rem;
+  left: 20.375rem;
+}
+@media screen and (max-width: 47.9375em) {
+  .hero--gif02 {
+    display: none;
+  }
+}
+
+.hero--gif03 {
+  top: 17.5rem;
+  left: 32.5rem;
+  z-index: -1;
+}
+@media screen and (max-width: 47.9375em) {
+  .hero--gif03 {
+    top: 8.8571428571rem;
+    left: 10rem;
+    width: 6.5rem;
+  }
+}
+
+.hero--gif04 {
+  top: 17.9375rem;
+  left: 51.125rem;
+}
+@media screen and (max-width: 47.9375em) {
+  .hero--gif04 {
+    top: 20.8571428571rem;
+    left: 7.0714285714rem;
+    width: 4.5714285714rem;
+  }
+}
+
+.hero--gif05 {
+  top: 5.3125rem;
+  left: 59.5625rem;
+}
+@media screen and (max-width: 47.9375em) {
+  .hero--gif05 {
+    top: 6.7142857143rem;
+    left: 17.1428571429rem;
+    width: 9.2142857143rem;
+  }
+}
+
+.hero--gif06 {
+  top: 21.125rem;
+  left: 82.25rem;
+}
+@media screen and (max-width: 47.9375em) {
+  .hero--gif06 {
+    top: 18.1428571429rem;
+    left: 14.5714285714rem;
+    width: 5.7142857143rem;
+  }
+}
+
+#lottie {
+  position: absolute;
+  inset: 0;
+}
+#lottie > * {
+  position: absolute;
+  transform: scale(1.5);
+}
+#lottie .s {
+  width: 11.0625rem;
+  aspect-ratio: 177/196;
+  transform: scale(2);
+}
+@media screen and (max-width: 47.9375em) {
+ lottie .s {
+    width: 4.6428571429rem;
+  }
+}
+lottie .h {
+  width: 14.1875rem;
+  aspect-ratio: 227/196;
+}
+@media screen and (max-width: 47.9375em) {
+  #lottie .h {
+    width: 5.7857142857rem;
+  }
+}
+#lottie .s1 {
+  top: 8.9375rem;
+  left: 10rem;
+}
+@media screen and (max-width: 47.9375em) {
+  #lottie .s1 {
+    top: 6.2142857143rem;
+    left: 2.7857142857rem;
+  }
+}
+#lottie .h1 {
+  top: 15.5rem;
+  left: 24.75rem;
+}
+@media screen and (max-width: 47.9375em) {
+  #lottie .h1 {
+    top: 8.0714285714rem;
+    left: 9rem;
+    z-index: -1;
+  }
+}
+#lottie .o {
+  top: 9.75rem;
+  left: 42rem;
+  width: 14.75rem;
+  aspect-ratio: 236/196;
+}
+@media screen and (max-width: 47.9375em) {
+  #lottie .o {
+    top: 6.2142857143rem;
+    left: 16.3571428571rem;
+    width: 6rem;
+  }
+}
+#lottie .s2 {
+  top: 31.25rem;
+  left: 47.1875rem;
+}
+@media screen and (max-width: 47.9375em) {
+  #lottie .s2 {
+    top: 22.2857142857rem;
+    left: 1.4285714286rem;
+  }
+}
+#lottie .h2 {
+  top: 38.5rem;
+  left: 63.125rem;
+}
+@media screen and (max-width: 47.9375em) {
+  #lottie .h2 {
+    top: 26.2857142857rem;
+    left: 7.4285714286rem;
+  }
+}
+#lottie .i {
+  top: 33.5rem;
+  left: 81rem;
+  width: 5.625rem;
+  aspect-ratio: 90/196;
+  transform: scale(3.3);
+}
+@media screen and (max-width: 47.9375em) {
+  #lottie .i {
+    top: 24.4285714286rem;
+    left: 14.6428571429rem;
+    width: 2.2857142857rem;
+  }
+}
+#lottie .n {
+  top: 27.5rem;
+  left: 92.875rem;
+  width: 14.1875rem;
+  aspect-ratio: 227/196;
+}
+@media screen and (max-width: 47.9375em) {
+  #lottie .n {
+    top: 21.1428571429rem;
+    left: 19rem;
+    width: 5.7857142857rem;
+  }
+}
+
+.hero--bg {
+  position: absolute;
+  top: -8.125rem;
+  left: 3.125rem;
+  right: 3.125rem;
+  aspect-ratio: 1820/1160;
+  z-index: -2;
+  overflow: hidden;
+}
+@media screen and (max-width: 47.9375em) {
+  .hero--bg {
+    top: 11.4285714286rem;
+    left: 1.4285714286rem;
+    right: 1.4285714286rem;
+    aspect-ratio: 320/372;
+  }
+}
+.hero--bg svg {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%) !important;
+  width: calc(100% + 7.5rem) !important;
+  height: auto !important;
+}
+@media screen and (max-width: 47.9375em) {
+  .hero--bg svg {
+    width: calc(100% + 10rem) !important;
+  }
+}
+/* スライダー全体のコンテナ */
+.home_people--slide.swiper {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    padding-bottom: 60px; /* ドットを表示するスペース */
+}
+
+/* スライド（各記事）の幅設定 */
+.home_people--slide .swiper-slide {
+    width: 300px !important; /* あなたの画像サイズ300pxに合わせる */
+    height: auto;
+    flex-shrink: 0;
+    transition: opacity 0.3s;
+}
+
+/* スライド間の重なりを防ぐ */
+.swiper-wrapper {
+    display: flex !important;
+}
+
+/* ページネーション（ドット）の見た目調整 */
+.swiper-pagination-bullet {
+    background: #ccc;
+    opacity: 1;
+}
+.swiper-pagination-bullet-active {
+    background: #000; /* アクティブなドットを黒に */
+}
+/* JSのアニメーション待ちによる非表示を解除 */
+.home_people--ttl .txt,
+.home_people--ttl .txt span {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important; /* 動かす前のアウトラインもリセット */
+    display: inline-block;      /* spanが消えないように */
+}
+/* 親要素の調整 */
+.home_people--ttl {
+    display: flex !important;   /* 横並びを強制 */
+    align-items: center;        /* 上下中央 */
+    justify-content: center;
+    color: #fff;                /* 文字色 */
+}
+
+/* 左側の「地域経済を動かす、」「しょうしんの」 */
+.home_people--ttl .sm {
+    display: flex !important;   /* 縦並びにするための準備 */
+    flex-direction: column;     /* 上下並び */
+    font-size: 20px;            /* 適宜調整 */
+    line-height: 1.4;
+    text-align: left;
+}
+
+/* 右側の「「ひと」」 */
+.home_people--ttl .lg {
+    display: block !important;
+    font-size: 80px;            /* 写真のように大きく */
+    font-weight: bold;
+    margin-left: 15px;          /* 左との隙間 */
+    line-height: 1;
+}
+
+/* 各テキスト行の強制表示 */
+.home_people--ttl .txt {
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+/* JSの干渉を上書きして強制表示 */
+.home_message--hand.waypoint {
+    opacity: 1 !important;
+    visibility: visible !important;
+    display: block !important; /* もし消されていれば */
+    transform: none !important; /* 動かす前のアウトラインもリセット */
+}
+/* 1. 森林（message-bg.png）が表示されている親要素への設定 */
+/* クラス名は今のHTMLに合わせて調整してください */
+.home_message, 
+[style*="message-bg.png"] {
+    position: relative !important; /* 握手を固定するための基準点にする */
+    min-height: 500px;             /* 森林が見える高さを確保 */
+    overflow: hidden;              /* 足元がはみ出さないように */
+}
+
+/* 2. 握手の画像（imgタグ）への設定 */
+.home_message--hand {
+    position: absolute !important; /* 親要素に対して浮かせる */
+    bottom: 0 !important;          /* 【最重要】一番下にピタッとくっつける */
+    left: 50% !important;          /* 真ん中に配置 */
+    transform: translateX(-50%) !important; /* 真ん中ピタの設定 */
+    
+    display: block !important;
+    width: auto !important;        /* サイズ調整 */
+    max-width: 900px;
+    margin: 0 !important;          /* 余計な余白を消去 */
+    z-index: 10 !important;        /* 森林より手前に出す */
+}
+/* 1. 親要素への設定（これはそのまま） */
+.home_message { /* message-bg.pngがある親要素 */
+    position: relative !important;
+    min-height: 500px; /* 必要に応じて調整 */
+    overflow: hidden;
+}
+
+/* 2. 握手の画像（imgタグ）への設定（ここを大幅に修正） */
+.home_message--hand {
+    /* --- 【固定設定】足元を下にピタッ --- */
+    position: absolute !important;
+    bottom: 0 !important;
+    
+    /* --- 【横位置設定】左端基準で中央へ（見切れ解消） --- */
+    left: 0 !important;    /* 基準を「真ん中」から「左端」に変更 */
+    right: 0 !important;   /* 右端も設定 */
+    margin: 0 auto !important; /* これで左右中央に収まる */
+    transform: none !important; /* 前のtransformは不要 */
+
+    /* --- 【サイズ設定】巨大化を抑えて文字に被らないように --- */
+    display: block !important;
+    width: 50% !important;    /* 画面の横幅いっぱいを上限に */
+    max-width: 900px !important; /* 画像の本来のサイズ（適宜調整） */
+    height: auto !important;   /* 高さは自動調整 */
+    
+    /* --- 【文字被り対策】 --- */
+    z-index: 1 !important;    /* 文字よりも背面に配置（文字のz-indexを10とかにすること） */
+}
+.home_message {
+  position: relative;
+  padding-top: 9.375rem;
+  padding-bottom: 11.5rem;
+  z-index: 2;
+  background-image: url(../images/message-bg.png), linear-gradient(to top, #FCF9F4 50%, transparent 50%, transparent);
+  background-image: url(../images/message-bg.png), linear-gradient(to top, var(--bg-off_wht) 50%, transparent 50%, transparent);
+  background-repeat: no-repeat, repeat;
+  background-position: left bottom, center;
+  background-size: 72.5625rem, auto;
+}
+@media screen and (max-width: 47.9375em) {
+  .home_message {
+    padding-top: 2.8571428571rem;
+    padding-bottom: 15.8571428571rem;
+    background-position: bottom, center;
+    background-size: 100%, auto;
+  }
+}
+
+.home_message--ttl_wrap {
+  display: flex;
+}
+@media screen and (max-width: 47.9375em) {
+  .home_message--ttl_wrap {
+    margin-bottom: 2.8571428571rem;
+  }
+}
+
+.home_message--ttl {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.2777777778em;
+}
+@media screen and (max-width: 47.9375em) {
+  .home_message--ttl {
+    font-size: 2.1428571429rem;
+  }
+}
+.home_message--ttl > span {
+  position: relative;
+  overflow: hidden;
+  padding: 0.12em 0 0.12em 0.2em;
+  line-height: 1;
+  z-index: 1;
+}
+.home_message--ttl > span::before {
+  z-index: -1;
+}
+.home_message--ttl > span.active::before {
+  transform: translateX(0);
+}
+.home_message--ttl > span.active .txt::before {
+  transform: translateX(100%);
+}
+.home_message--ttl > span.active .txt {
+  opacity: 1;
+}
+.home_message--ttl .txt,
+.home_message--ttl .txt::before {
+  transition-delay: 0.6s;
+}
+.home_message--ttl .txt {
+  opacity: 0;
+}
+.home_message--ttl > span::before,
+.home_message--ttl .txt::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-bottom: 0.3125rem solid;
+  transform: translateX(-100%);
+}
+.home_message--ttl > span::before {
+  background-color: rgba(255, 255, 255, 0.88);
+  transition: all 0.6s ease-in-out;
+}
+.home_message--ttl .txt::before {
+  background-color: #fff;
+  background-color: var(--bg-wht);
+  transition: all 1.2s ease-in-out;
+}
+@media print, screen and (min-width: 48em) {
+  .home_message--ttl .sp-none-inline {
+    display: inline-block;
+    width: 1.6111111111em;
+  }
+}
+@media screen and (max-width: 47.9375em) {
+  .home_message--ttl .fz-48 {
+    font-size: 2.1428571429rem;
+  }
+}
+@media screen and (max-width: 47.9375em) {
+  .home_message--ttl .fz-88 {
+    font-size: 2.8571428571rem;
+  }
+}
+.home_message--ttl .fz-112 {
+  letter-spacing: 0.1964285714em;
+}
+@media screen and (max-width: 47.9375em) {
+  .home_message--ttl .fz-112 {
+    font-size: 3.5714285714rem;
+    letter-spacing: 0.1071428571em;
+  }
+}
+
+.home_message--en-v {
+  margin-top: 2.5rem;
+  margin-left: -6rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.3333333333em;
+  font-weight: 600;
+}
+@media screen and (max-width: 47.9375em) {
+  .home_message--en-v {
+    margin-top: -0.5714285714rem;
+    margin-left: -3.2857142857rem;
+    font-size: 0.8571428571rem;
+  }
+}
+.home_message--en-v > span {
+  border-left: 1px solid #D92B44;
+  border-left: 1px solid var(--clr-main);
+}
+
+.home_message--txtarea {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+@media print, screen and (min-width: 48em) {
+  .home_message--txtarea {
+    width: 57.625rem;
+    aspect-ratio: 1/1;
+    margin-top: -14.8125rem;
+    margin-left: auto;
+    margin-right: -3.25rem;
+  }
+}
+@media screen and (max-width: 47.9375em) {
+  .home_message--txtarea {
+    font-size: 1.1428571429rem;
+  }
+}
+
+.home_message--en {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 31.6875rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media print, screen and (min-width: 48em) {
+  .home_message--en {
+    margin-top: 3.75rem;
+  }
+  .home_message--en::after {
+    content: "";
+    display: block;
+    height: 1px;
+    border-bottom: 1px solid;
+    margin-left: 1.6875rem;
+    transition: all 1.2s ease-in-out;
+    transition-delay: 1s;
+  }
+  .home_message--en.active::after {
+    flex: 1;
+  }
+  .home_message--en.active .home_message--deco04 {
+    transform: translateX(0);
+  }
+}
+@media screen and (max-width: 47.9375em) {
+  .home_message--en {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    max-width: 14.7857142857rem;
+    opacity: 0.2;
+    display: none;
+  }
+}
+
+@media print, screen and (min-width: 48em) {
+  .home_message--txt {
+    line-height: 2.2;
+    letter-spacing: 0.005em;
+  }
+}
+@media screen and (max-width: 47.9375em) {
+  .home_message--txt {
+    writing-mode: inherit;
+  }
+  .home_message--txt p:not(:last-child) {
+    margin-bottom: 1em !important;
+    margin-left: 0 !important;
+  }
+}
+/* --- 親コンテナ：背景色と余白 --- */
+.home_message--container {
+    background-color: #942d2f; /* 画像の落ち着いた赤色 */
+    padding: 60px 40px;        /* 周囲の余白（調整してください） */
+    color: #fff;                /* 文字色：白 */
+}
+
+/* --- タイトル全体：左揃えと行間 --- */
+.home_message--ttl {
+    display: flex;
+    flex-direction: column;    /* 縦に並べる（1行ずつ） */
+    align-items: flex-start;    /* 【重要】左揃えにする */
+    justify-content: flex-start;
+    font-family: "Noto Sans JP", sans-serif; /* 適切なフォントを指定 */
+    font-weight: bold;
+    gap: 15px;                  /* 行と行の間の隙間 */
+}
+
+/* --- 各行のブロック：左揃え --- */
+.home_message--ttl .row {
+    display: block;
+    text-align: left;           /* 各行内の左揃え */
+    width: 100%;
+}
+
+/* --- 各行内のテキスト：インラインで並べる --- */
+.home_message--ttl .txt {
+    display: flex;
+    align-items: baseline;     /* 文字の下端（ベースライン）を揃える */
+    justify-content: flex-start;
+    flex-wrap: wrap;            /* 折り返しを許可 */
+}
+
+/* --- 文字サイズの定義（!importantで強制適用） --- */
+.fz-48 {
+    font-size: 48px !important;
+    line-height: 1 !important;
+}
+
+.fz-72 {
+    font-size: 72px !important;
+    line-height: 1 !important;
+}
+
+.fz-88 {
+    font-size: 88px !important;
+    line-height: 1 !important;
+}
+
+.fz-112 {
+    font-size: 112px !important;
+    line-height: 1 !important;
+}
+
+/* waypointによる非表示を防ぐための強制表示（デバッグ用） */
+.waypoint {
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+/* 親要素：JSに隠されないよう強制表示 */
+.my-main-copy {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important; /* 左揃え */
+    gap: 10px !important;              /* 行間 */
+    color: #000 !important;             /* 一旦黒で確認（背景に合わせて変えてください） */
+    font-family: sans-serif;
+    font-weight: bold;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+/* 各行の設定 */
+.my-row {
+    display: flex !important;
+    align-items: baseline !important;   /* 文字の下端を揃える */
+    white-space: nowrap !important;     /* 勝手に改行させない */
+}
+
+/* 各文字サイズの設定（JSに上書きされないよう!importantを死守） */
+.my-fz-48  { font-size: 48px !important;  line-height: 1 !important; }
+.my-fz-72  { font-size: 72px !important;  line-height: 1 !important; }
+.my-fz-88  { font-size: 88px !important;  line-height: 1 !important; }
+.my-fz-112 { font-size: 112px !important; line-height: 1.1 !important; }
+/* --- A. 土台となる箱のサイズと位置 --- */
+#lottie {
+    position: relative !important;
+    display: block !important;
+    width: 600px !important;       /* 写真の横幅感に合わせる */
+    height: 400px !important;      /* 2行分が入る高さ */
+    margin: 60px auto 0 !important; /* 上の余白（ここで上下位置を調整） */
+    left: -30px !important;        /* 【重要】これで全体を少し左にずらす */
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+/* --- B. 文字の共通設定（サイズを小さめに統一） --- */
+#lottie span {
+    display: inline-block !important;
+    font-size: 80px !important;    /* ほどよい大きさに調整 */
+    font-weight: 900 !important;
+    color: #cc2a36 !important;     /* 写真の赤色 */
+    position: absolute !important; /* これで座標(top/left)を有効にする */
+    line-height: 1 !important;
+    transform: none !important;    /* JSの勝手な動きを封印 */
+}
+
+/* --- C. 【写真通り】1文字ずつの精密な座標 --- */
+
+/* --- 1行目：SHO --- */
+.s1 { top: 0 !important; left: 100px !important; }
+.h1 { top: 0 !important; left: 250px !important; }
+.o  { top: 0 !important; left: 400px !important; }
+
+/* --- 2行目：SHIN --- */
+.s2 { top: 160px !important; left: 50px !important; }  /* 1行目より少し左から開始 */
+.h2 { top: 160px !important; left: 180px !important; }
+.i  { top: 160px !important; left: 300px !important; }
+.n  { top: 160px !important; left: 400px !important; }
+#lottie {
+    position: relative !important;
+    display: block !important;
+    width: 600px !important;
+    height: 400px !important;
+
+    /* --- ここを修正して左に寄せます --- */
+    margin: 80px 0 0 50px !important; /* 「auto」を消して左端からの距離を指定（50pxはお好みで） */
+    left: -100px !important;          /* このマイナスを大きくすればするほど左に寄ります */
+    
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+/* 親要素 */
+div#lottie {
+    position: relative !important;
+    display: block !important;
+    width: 100% !important;
+    max-width: 500px !important;
+    height: 400px !important;
+    margin: 80px 0 0 0 !important; 
+    left: -60px !important; /* 全体を左に寄せる */
+}
+
+/* 文字の基本設定 */
+div#lottie span[class] {
+    position: absolute !important;
+    display: block !important;
+    font-size: 80px !important; /* 写真の迫力を出すため少し大きく */
+    font-weight: 900 !important;
+    line-height: 1 !important;
+}
+
+/* --- 1行目：SHO（あえて高さをズラす） --- */
+div#lottie .s1 { top: 10px !important;  left: 60px !important; }
+div#lottie .h1 { top: 40px !important; left: 125px !important; } /* 少し上に上げる */
+div#lottie .o  { top: 20px !important;  left: 235px !important; } /* 少し下に下げる */
+
+/* --- 2行目：SHIN（ここも階段状にズラす） --- */
+div#lottie .s2 { top: 160px !important; left: 20px !important; }  /* 左端に寄せる */
+div#lottie .h2 { top: 190px !important; left: 110px !important; } /* Sより下げる */
+div#lottie .i  { top: 145px !important; left: 205px !important; } /* グッと上に上げる */
+div#lottie .n  { top: 180px !important; left: 260px !important; } /* また下げる */
+/* --- 文字の設定（人物の後ろに回す） --- */
+div#lottie span[class] {
+    position: absolute !important;
+    display: block !important;
+    /* (他の設定はそのまま) */
+    
+    z-index: 1 !important; /* 数字を小さくして奥へ */
+}
+
+/* --- 人物の設定（文字の前に出す） --- */
+/* 人物が入っているタグ（.personなど）に対して --- */
+.person {
+    position: absolute !important;
+    z-index: 10 !important; /* 文字(1)より大きい数字にして手前へ */
+    pointer-events: none;   /* 人物が邪魔で文字がクリックできないのを防ぐ */
+}
+/* --- Hだけ特別に前に出す --- */
+div#lottie span.h1 {
+    z-index: 2 !important; /* 他の文字(1)より少し前に出す */
+}
+
+/* --- Hの中の人物を、さらにその前に出す --- */
+div#lottie span.h1 .person {
+    z-index: 10 !important; /* 文字コンテナ(2)より大きい数字にする */
+}
+/* --- 1. 親コンテナ：全体を左に寄せて整える --- */
+.home_message--ttl_wrap {
+    text-align: left !important;
+    padding-left: 50px !important; /* 左の余白 */
+    margin-top: 60px !important;
+}
+
+.my-main-copy {
+    display: block !important;
+    margin: 0 !important;
+}
+
+/* --- 2. 行の設定：白い背景と太い黒アンダーライン --- */
+.my-row {
+    display: table !important;       /* 文字の幅に合わせる（重要！） */
+    background-color: #fff !important; /* 白背景 */
+    border-bottom: 6px solid #000 !important; /* 太い黒の下線 */
+    margin-bottom: 25px !important;  /* 行同士の間隔 */
+    padding: 5px 15px 2px 5px !important; /* 内側の余白 */
+    line-height: 1.1 !important;
+    white-space: nowrap !important;  /* 改行させない */
+}
+
+/* --- 3. 各文字サイズ：写真のメリハリを再現 --- */
+.my-main-copy span[class*="my-fz-"] {
+    color: #000 !important;
+    font-weight: 900 !important; /* 極太 */
+    display: inline-block !important;
+    vertical-align: baseline !important;
+    /* 全角スペース対策：余計な空白を詰める */
+    margin-left: -0.2em !important; 
+}
+
+/* 具体的なサイズ固定 */
+.my-fz-88  { font-size: 70px !important; }  /* 地域・動・金融 */
+.my-fz-72  { font-size: 55px !important; }  /* 経済・かす */
+.my-fz-48  { font-size: 35px !important; }  /* を・を、 */
+.my-fz-112 { font-size: 85px !important; }  /* とことんやる。 */
+
+/* --- 4. 縦書き英語パーツ（THE FUTURE...） --- */
+.home_message--en-v {
+    /* もし必要であればここに位置調整を書きます */
+    writing-mode: vertical-rl !important;
+    position: absolute !important;
+    right: 10% !important;
+    top: 0 !important;
+}
+/* --- 行の設定を修正 --- */
+.my-row {
+    display: table !important;
+    background-color: #fff !important;
+    border-bottom: 6px solid #000 !important;
+    margin-bottom: 25px !important;
+    padding: 5px 15px !important;
+    
+    /* ★ここがポイント：中の「全角スペース」をサイズ0にして消す */
+    font-size: 0 !important; 
+    white-space: nowrap !important;
+}
+
+/* --- 中の文字だけサイズを復活させる --- */
+.my-main-copy span[class*="my-fz-"] {
+    display: inline-block !important;
+    letter-spacing: -0.05em !important; /* 文字の間をさらに詰める */
+    /* これで文字だけがちゃんと表示されるようになります */
+}
+/* ==========================================
+   親コンテナの設定（全角スペースの悪影響を無効化）
+   ========================================== */
+#shoshin-wave-letters {
+    position: relative;
+    width: 100%;
+    max-width: 1000px; /* 全体がバラけないように見本の幅に固定 */
+    height: 600px;     /* ヒーローエリアの高さ */
+    margin: 0 auto;
+    font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', sans-serif;
+    
+    /* HTMLにある大量の全角スペースをリセットして潰すための設定 */
+    display: flex;
+    white-space: nowrap;
+    font-size: 0; /* スペースの幅をゼロにします */
+}
+
+/* 親コンテナ */
+#shoshin-wave-letters {
+    position: relative;
+    width: 100%;
+    /* 今のpxバランスに合わせた全体の高さの比率（画面幅の55%） */
+    height: 55vw; 
+    margin: 0 auto;
+    font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', sans-serif;
+    display: flex;
+    white-space: nowrap;
+    font-size: 0;
+    overflow: visible;
+}
+
+/* ==========================================
+   文字（K, A, K2...）の共通スタイル
+   ========================================== */
+/* ==========================================
+   【共通】親コンテナと文字の基本設定
+   ========================================== */
+#shoshin-wave-letters {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', sans-serif;
+    display: flex;
+    white-space: nowrap;
+    font-size: 0;
+    overflow: visible;
+}
+
+#shoshin-wave-letters span {
+    position: absolute;
+    font-weight: 900;
+    color: #e62335;
+    line-height: 1;
+    display: block;
+    width: auto;
+    height: auto;
+}
+
+#shoshin-wave-letters img {
+    position: absolute;
+}
+
+/* ==========================================
+   💻 パソコン用の設定（画面幅が768px以上のとき）
+   👉 あなたが微調整してくれた最新の数値を100%そのまま適用しています！
+   ========================================== */
+@media (min-width: 768px) {
+    #shoshin-wave-letters {
+        height: 55vw; 
+    }
+    #shoshin-wave-letters span {
+        font-size: 15vw;   
+    }
+    
+    /* 【PC】文字の位置 */
+    .K  { top: 5vw;   left: -4vw;  z-index: 1; }
+    .A  { top: 12vw;  left: 11vw;  z-index: 1; }
+    .K2 { top: 7vw;   left: 24vw;  z-index: 2; }
+    .U  { top: 24vw;  left: 26vw;  z-index: 1; }
+    .U2 { top: 31vw;  left: 40vw;  z-index: 1; }
+    .N  { top: 27vw;  left: 52vw;  z-index: 1; }
+    .O  { top: 21vw;  left: 63vw;  z-index: 1; }
+
+    /* 【PC】画像の位置とサイズ */
+    .hero--img   { top: 8vw;  left: 14vw; width: 8vw;    height: auto; z-index: 3; }
+    .hero--gif01 { top: 16vw; left: 4vw;  width: 10.7vw; height: auto; z-index: 2; }
+    .hero--gif02 { top: 27vw; left: 18vw; width: 7vw;    height: auto; z-index: 3; }
+    .hero--gif03 { top: 19vw; left: 30vw; width: 14vw;   height: auto; z-index: 1; }
+    .hero--gif04 { top: 14vw; left: 45vw; width: 10vw;   height: auto; z-index: 3; }
+    .hero--gif05 { top: 6vw;  left: 55vw; width: 18vw;   height: auto; z-index: 3; }
+    .hero--gif06 { top: 22vw; left: 76vw; width: 12vw;   height: auto; z-index: 3; }
+}
+
+/* ==========================================
+   📱 スマホ用の設定（画面幅が767px以下のとき）
+   👉 あなたのPC版の絶妙な距離感をベースに、
+      スマホの縦長画面でもキャラクターが重なりすぎないよう調整しました！
+   ========================================== */
+@media (max-width: 767px) {
+    #shoshin-wave-letters {
+        height: 110vw; /* 縦長画面用に高さをたっぷり確保 */
+    }
+    #shoshin-wave-letters span {
+        font-size: 26vw; /* スマホ画面でも文字が寂しく見えないように少し拡大 */
+    }
+    
+    /* 【スマホ】文字の位置 */
+    .K  { top: 15vw;  left: 15vw;  z-index: 1; }
+    .A  { top: 20vw;  left: 37vw;  z-index: 1; }
+    .K2 { top: 15vw;  left: 58vw;  z-index: 2; }
+    .U  { top: 67vw;  left: 8vw;  z-index: 1; }
+    .U2 { top: 80vw;  left: 27vw;  z-index: 1; }
+    .N  { top: 73vw;  left: 47vw;  z-index: 1; }
+    .O  { top: 61vw;  left: 67vw;  z-index: 1; }
+
+    /* 【スマホ】画像の位置とサイズ */
+    .hero--img   { top: 18vw; left: 25vw; width: 15vw; height: auto; z-index: 3; }
+    .hero--gif01 { top: 20vw; left: 5vw;  width: 15vw; height: auto; z-index: 2; }
+    .hero--gif02 { top: 40vw; left: 26vw; width: 11vw; height: auto; z-index: 3; }
+    .hero--gif03 { top: 30vw; left: 37vw; width: 22vw; height: auto; z-index: 1; }
+    .hero--gif04 { top: 67vw; left: 27vw; width: 15vw; height: auto; z-index: 3; }
+    .hero--gif05 { top: 10vw; left: 63vw; width: 27vw; height: auto; z-index: 3; }
+    .hero--gif06 { top: 68vw; left: 58vw; width: 15vw; height: auto; z-index: 3; }
+}
+/* 全体のコンテナ */
+.home_message--ttl_wrap {
+  position: relative;
+  display: inline-block;
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+  padding-right: 120px;
+}
+
+/* メインメッセージの共通設定 */
+.home_message--ttl {
+  margin: 0;
+  font-weight: 900 !important;
+  line-height: 1.5 !important;
+  /* ↓ 文字色を絶対に黒（#000000）にする指定 */
+  color: #000000 !important; 
+  /* ↓ 他のCSSで非表示にされている場合の対策 */
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* 各行の共通設定とアンダーライン */
+.home_message--ttl .line-wrap {
+  display: block;
+  width: fit-content;
+  margin-bottom: 24px;
+  border-bottom: 4px solid #000000 !important; /* 下線も確実に黒 */
+  padding-bottom: 8px;
+}
+
+/* タグの中の文字色も念のためすべて黒に固定 */
+.home_message--ttl span {
+  color: #000000 !important;
+  display: inline-block;
+}
+
+/* --- 文字サイズの調整（!importantで強制適用） --- */
+.home_message--ttl {
+  font-size: 64px !important;
+}
+
+.home_message--ttl .fz-112 {
+  font-size: 104px !important;
+  letter-spacing: -0.02em;
+}
+
+.home_message--ttl .fz-88 {
+  font-size: 84px !important;
+}
+
+.home_message--ttl .fz-48 {
+  font-size: 44px !important;
+  font-weight: 700 !important;
+}
+
+
+/* --- 右側の縦書き英語メッセージ --- */
+.home_message--en-v {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 12px;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-weight: bold;
+  font-size: 18px;
+  letter-spacing: 0.1em;
+  color: #000000 !important;
+}
+
+.home_message--en-v .line {
+  writing-mode: vertical-rl;
+  text-combine-upright: none;
+  color: #000000 !important;
+}
+
+.home_message--en-v .line:first-child {
+  border-left: 1px solid #d3a2a2;
+  padding-left: 12px;
+}
+/* このメッセージエリアの文字だけを強制的に表示させ、他には影響を与えない */
+.home_message--ttl .txt,
+.home_message--ttl span[class^="fz-"],
+.home_message--en-v .line {
+  opacity: 1 !important;
+  visibility: visible !important;
+  color: #000000 !important;
+  /* transformはあえて止めないことで、動く余地を残します */
+}
+/* ==========================================================================
+   スマホ・タブレット用のレスポンシブ設定（画面幅768px以下のとき）
+   ========================================================================== */
+@media screen and (max-width: 768px) {
+  
+  /* 全体の余白や位置をスマホ向けにリセット */
+  .home_message--ttl_wrap {
+    padding-right: 0;      /* 右側の余白を無くして画面に収める */
+    margin-left: 0 !important; /* パソコン用に入れた左寄せをリセット */
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* 下線の太さと行間の調整 */
+  .home_message--ttl .line-wrap {
+    margin-bottom: 16px;       /* 行間を少し狭く */
+    border-bottom: 3px solid #000000 !important; /* 下線を少し細く */
+    padding-bottom: 4px;       /* 線と文字の隙間を調整 */
+  }
+
+  /* --- スマホ用の文字サイズ（パソコン時の約半分〜60%に縮小） --- */
+  .home_message--ttl {
+    font-size: 32px !important; /* 「経済」「かす」など */
+  }
+
+  .home_message--ttl .fz-112 {
+    font-size: 48px !important; /* 「とことんやる。」 */
+    letter-spacing: -0.01em;
+  }
+
+  .home_message--ttl .fz-88 {
+    font-size: 40px !important; /* 「地域」「動」「金融」 */
+  }
+
+  .home_message--ttl .fz-48 {
+    font-size: 22px !important; /* 「を」「を、」 */
+  }
+
+  /* --- 右側にあった縦書き英語メッセージをスマホでは下側に配置 --- */
+  .home_message--en-v {
+    position: static;          /* 絶対配置を解除 */
+    display: flex;
+    flex-direction: row;       /* 横並びにする */
+    justify-content: flex-start;
+    gap: 16px;
+    margin-top: 24px;          /* メッセージの下側に隙間を作る */
+  }
+
+  .home_message--en-v .line {
+    writing-mode: horizontal-tb; /* 縦書きから通常の「横書き」に戻す */
+    font-size: 14px;
+  }
+
+  .home_message--en-v .line:first-child {
+    border-left: none;         /* パソコン用の縦線を消す */
+    padding-left: 0;
+    border-right: 1px solid #d3a2a2; /* 代わりに英単語の間に区切り線を入れる */
+    padding-right: 16px;
+  }
+}
