@@ -1011,22 +1011,22 @@ div#lottie span.h1 .person {
     }
     
     /* 【スマホ】文字の位置 */
-    .K  { top: 5vw;  left: 2vw;  z-index: 1; }
-    .A  { top: 10vw;  left: 24vw;  z-index: 1; }
-    .K2 { top: 5vw;  left: 45vw;  z-index: 2; }
-    .U  { top: 47vw;  left: -5vw;  z-index: 1; }
-    .U2 { top: 60vw;  left: 13vw;  z-index: 1; }
-    .N  { top: 53vw;  left: 33vw;  z-index: 1; }
-    .O  { top: 41vw;  left: 54vw;  z-index: 1; }
+    .K  { top: 15vw;  left: 15vw;  z-index: 1; }
+    .A  { top: 20vw;  left: 37vw;  z-index: 1; }
+    .K2 { top: 15vw;  left: 58vw;  z-index: 2; }
+    .U  { top: 67vw;  left: 8vw;  z-index: 1; }
+    .U2 { top: 80vw;  left: 27vw;  z-index: 1; }
+    .N  { top: 73vw;  left: 47vw;  z-index: 1; }
+    .O  { top: 61vw;  left: 67vw;  z-index: 1; }
 
     /* 【スマホ】画像の位置とサイズ */
-    .hero--img   { top: 10vw; left: 12vw; width: 15vw; height: auto; z-index: 3; }
-    .hero--gif01 { top: 13vw; left: -13vw;  width: 15vw; height: auto; z-index: 2; }
-    .hero--gif02 { top: 40vw; left: 13vw; width: 11vw; height: auto; z-index: 3; }
-    .hero--gif03 { top: 18vw; left: 24vw; width: 22vw; height: auto; z-index: 1; }
-    .hero--gif04 { top: 47vw; left: 14vw; width: 15vw; height: auto; z-index: 3; }
-    .hero--gif05 { top: 10vw; left: 50vw; width: 27vw; height: auto; z-index: 3; }
-    .hero--gif06 { top: 48vw; left: 40vw; width: 15vw; height: auto; z-index: 3; }
+    .hero--img   { top: 18vw; left: 25vw; width: 15vw; height: auto; z-index: 3; }
+    .hero--gif01 { top: 20vw; left: 5vw;  width: 15vw; height: auto; z-index: 2; }
+    .hero--gif02 { top: 40vw; left: 26vw; width: 11vw; height: auto; z-index: 3; }
+    .hero--gif03 { top: 30vw; left: 37vw; width: 22vw; height: auto; z-index: 1; }
+    .hero--gif04 { top: 67vw; left: 27vw; width: 15vw; height: auto; z-index: 3; }
+    .hero--gif05 { top: 10vw; left: 63vw; width: 27vw; height: auto; z-index: 3; }
+    .hero--gif06 { top: 68vw; left: 58vw; width: 15vw; height: auto; z-index: 3; }
 }
 /* 全体のコンテナ */
 .home_message--ttl_wrap {
