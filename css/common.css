@@ -1041,44 +1041,42 @@ div#lottie span.h1 .person {
   margin: 0;
   font-weight: 900 !important;
   line-height: 1.5 !important;
-  /* ↓ 文字色を絶対に黒（#000000）にする指定 */
   color: #000000 !important; 
-  /* ↓ 他のCSSで非表示にされている場合の対策 */
   opacity: 1 !important;
   visibility: visible !important;
 }
 
 /* 各行の共通設定とアンダーライン */
 .home_message--ttl .line-wrap {
-  display: block;
-  width: fit-content;
+  display: inline-block; /* blockからinline-blockに変更（文字幅の白背景にするため） */
+  width: auto;           /* 横幅を自動（文字の長さ）にする */
+  background-color: #ffffff; /* 👈 ここに白背景を追加！ */
   margin-bottom: 24px;
-  border-bottom: 4px solid #000000 !important; /* 下線も確実に黒 */
-  padding-bottom: 8px;
+  border-bottom: 4px solid #000000 !important;
+  padding: 0 8px 8px 8px; /* 左右にも少し白背景の余白を作る */
 }
 
 /* タグの中の文字色も念のためすべて黒に固定 */
 .home_message--ttl span {
   color: #000000 !important;
-  display: inline-block;
 }
 
-/* --- 文字サイズの調整（!importantで強制適用） --- */
+/* --- 文字サイズの調整（PC版：!importantを外しました） --- */
 .home_message--ttl {
-  font-size: 64px !important;
+  font-size: 64px;
 }
 
 .home_message--ttl .fz-112 {
-  font-size: 104px !important;
+  font-size: 104px;
   letter-spacing: -0.02em;
 }
 
 .home_message--ttl .fz-88 {
-  font-size: 84px !important;
+  font-size: 84px;
 }
 
 .home_message--ttl .fz-48 {
-  font-size: 44px !important;
+  font-size: 44px;
   font-weight: 700 !important;
 }
 
@@ -1108,72 +1106,87 @@ div#lottie span.h1 .person {
   border-left: 1px solid #d3a2a2;
   padding-left: 12px;
 }
-/* このメッセージエリアの文字だけを強制的に表示させ、他には影響を与えない */
+
 .home_message--ttl .txt,
 .home_message--ttl span[class^="fz-"],
 .home_message--en-v .line {
   opacity: 1 !important;
   visibility: visible !important;
   color: #000000 !important;
-  /* transformはあえて止めないことで、動く余地を残します */
 }
+
 /* ==========================================================================
    スマホ・タブレット用のレスポンシブ設定（画面幅768px以下のとき）
    ========================================================================== */
 @media screen and (max-width: 768px) {
   
-  /* 全体の余白や位置をスマホ向けにリセット */
   .home_message--ttl_wrap {
-    padding-right: 0;      /* 右側の余白を無くして画面に収める */
-    margin-left: 0 !important; /* パソコン用に入れた左寄せをリセット */
+    padding-right: 0;
+    margin-left: 0 !important;
     width: 100%;
     box-sizing: border-box;
   }
 
   /* 下線の太さと行間の調整 */
   .home_message--ttl .line-wrap {
-    margin-bottom: 16px;       /* 行間を少し狭く */
-    border-bottom: 3px solid #000000 !important; /* 下線を少し細く */
-    padding-bottom: 4px;       /* 線と文字の隙間を調整 */
+    margin-bottom: 16px;
+    border-bottom: 3px solid #000000 !important;
+    padding: 0 4px 4px 4px;
   }
 
-  /* --- スマホ用の文字サイズ（パソコン時の約半分〜60%に縮小） --- */
+  /* --- スマホ用の文字サイズ（確実に効くように !important を付与） --- */
   .home_message--ttl {
-    font-size: 32px !important; /* 「経済」「かす」など */
+    font-size: 28px !important; /* 「経済」「かす」など */
   }
 
   .home_message--ttl .fz-112 {
-    font-size: 48px !important; /* 「とことんやる。」 */
+    font-size: 42px !important; /* 「とことんやる。」 */
     letter-spacing: -0.01em;
   }
 
   .home_message--ttl .fz-88 {
-    font-size: 40px !important; /* 「地域」「動」「金融」 */
+    font-size: 36px !important; /* 「地域」「動」「金融」 */
   }
 
   .home_message--ttl .fz-48 {
-    font-size: 22px !important; /* 「を」「を、」 */
+    font-size: 20px !important; /* 「を」「を、」 */
   }
 
   /* --- 右側にあった縦書き英語メッセージをスマホでは下側に配置 --- */
   .home_message--en-v {
-    position: static;          /* 絶対配置を解除 */
+    position: static;
     display: flex;
-    flex-direction: row;       /* 横並びにする */
+    flex-direction: row;
     justify-content: flex-start;
     gap: 16px;
-    margin-top: 24px;          /* メッセージの下側に隙間を作る */
+    margin-top: 24px;
   }
 
   .home_message--en-v .line {
-    writing-mode: horizontal-tb; /* 縦書きから通常の「横書き」に戻す */
+    writing-mode: horizontal-tb;
     font-size: 14px;
   }
 
   .home_message--en-v .line:first-child {
-    border-left: none;         /* パソコン用の縦線を消す */
+    border-left: none;
     padding-left: 0;
-    border-right: 1px solid #d3a2a2; /* 代わりに英単語の間に区切り線を入れる */
+    border-right: 1px solid #d3a2a2;
     padding-right: 16px;
+  }
+}
+/* --- PCでの位置を左に動かす --- */
+.home_message--ttl_wrap {
+  /* もしすでに left や transform が使われている場合は、
+     マイナスのマージンで左に引っ張るのが一番安全です */
+  margin-left: -40px !important; /* 👈数値を大きくするほど左に動きます */
+}
+
+/* --- スマホでの位置を左に動かす --- */
+@media screen and (max-width: 768px) {
+  .home_message--ttl_wrap {
+    /* スマホ画面で左端に寄りすぎないようにしつつ、左に動かします */
+    position: relative !important;
+    left: -40px !important; /* 👈スマホで左に動かす場合はここを調整 */
+    margin-left: 0 !important; /* スマホ用のリセット */
   }
 }
