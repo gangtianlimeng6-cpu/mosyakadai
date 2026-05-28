@@ -1,66 +1,52 @@
-.interview-name,
-.interview-name .interview--ttl {
- writing-mode: horizontal-tb !important;
- white-space: nowrap !important;
- width: auto !important;
- min-width: max-content !important;
- display: block !important;
- flex-shrink: 0 !important;
- word-break: keep-all !important;
+/* 2列にするための強制上書き設定 */
+.posts.posts-interview {
+  display: grid !important;                /* グリッドレイアウトに変更 */
+  grid-template-columns: repeat(2, 1fr) !important; /* 強制的に2列 */
+  gap: 40px !important;                    /* カード間の隙間 */
+  width: 100% !important;                  /* 幅を広げる */
 }
-  /* 修正ポイント：スライダー全体の高さを制限する */
-  .swiper {
-    width: 100%;
-    max-width: 1200px; /* 横幅の最大値 */
-    
-    /* * --- ここを修正 ---
-     * スライダーの高さの最大値を決めます。
-     * 例えば、「画面の高さの70%」にするなど。
-     */
-    max-height: 70vh; /* 'vh'は画面の高さを基準にした単位です。70vhは画面の70%の意味。 */
-    height: auto;
-    
-    /* これを入れると、はみ出した画像が綺麗に隠れます */
-    overflow: hidden; 
-  }
 
-  /* 修正ポイント：画像がその枠内で綺麗に収まるようにする */
-  .img-cover {
-    width: 100%;
-    
-    /* * --- ここを修正 ---
-     * 画像の高さも、親要素（.swiper）と同じに合わせる 
-     */
-    height: 100%;
-    
-    /* * これはそのまま。画像を枠に合わせつつ、
-     * アスペクト比を保って切り抜く設定 
-     */
-    object-fit: cover; 
-    
-    /* 画像の中央を表示するように設定（任意） */
-    object-position: center; 
-  }
-  
-  /* Swiperコンテナの中にあるラッパーも高さを親に合わせる */
-  .swiper-wrapper {
-    height: 100%;
-  }
-  .swiper-slide {
-    height: 100%;
-  }
-  .swiper {
-    /* ここ！1200pxだとデカすぎるので、例えば500pxくらいにしてみます */
-    width: 100%;
-    max-width: 500px; 
-    
-    /* 高さは自動か、お好みで固定してください */
-    height: auto;
-    overflow: hidden;
-  }
+/* カード自体の幅を自動調整 */
+.posts.posts-interview .post {
+  width: 100% !important;                  /* 1列分の幅を確保 */
+  margin: 0 !important;                    /* 余計なマージンをリセット */
+  max-width: none !important;              /* 幅の制限を解除 */
+}
 
-  .img-cover {
-    width: 100%;
-    height: 100%; /* 高さを出したいなら 500px など数値を入れてもOK */
-    object-fit: cover;
-  }
+/* 念のための画像調整 */
+.posts.posts-interview .post--img img {
+  width: 100% !important;                  /* 画像を枠いっぱいに */
+  height: auto !important;                 /* 比率を維持 */
+}
+/* 1. 全体設定：左側（Swiper）を固定対象にする */
+.mySwiper {
+  position: -webkit-sticky !important; /* Safari用 */
+  position: sticky !important;
+  top: 20px !important; /* 上からの位置 */
+  height: fit-content !important;
+}
+
+/* 2. もし左と右が縦に並んでしまっている場合、強制的に横並びにする */
+/* 親のクラス名（例: mainなど）を確認して指定してください */
+main {
+  display: flex !important;
+  align-items: flex-start !important;
+}
+/* Swiper全体を画面いっぱいに広げる */
+.swiper.mySwiper {
+  height: 100vh !important;       /* 画面の高さ(100vh)を強制 */
+  min-height: 100vh !important;
+  overflow: hidden !important;    /* はみ出した余白を切り取る */
+}
+
+/* 画像をコンテナのサイズに合わせる */
+.swiper.mySwiper .swiper-slide img {
+  width: 100% !important;
+  height: 100% !important;        /* 高さを親に合わせる */
+  object-fit: cover !important;   /* 比率を保って隙間なく埋める */
+}
+
+/* スライダー内の不要な余白をリセット */
+.swiper-wrapper {
+  height: 100% !important;
+}

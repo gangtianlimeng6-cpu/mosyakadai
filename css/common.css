@@ -1190,3 +1190,110 @@ div#lottie span.h1 .person {
     margin-left: 0 !important; /* スマホ用のリセット */
   }
 }
+/* ==========================================
+   お知らせ：デザイン据え置き・右端のチラ見え完全撲滅
+   ========================================== */
+
+/* 1. 全体を表示する外枠（デザインも配置も元のまま） */
+.news_list {
+  display: flex !important;       /* 横並び（横スライド用）にします */
+  height: 40px !important;       /* 縦の時と同じ高さを維持 */
+  overflow: hidden !important;   /* はみ出た2件目を隠す */
+  position: relative;
+  width: 100% !important;
+}
+
+/* 2. 各お知らせの箱（日付とタイトルのセット） */
+.news_list .post {
+  flex: 0 0 100% !important;     /* 1件の幅を外枠の幅にカチッと100%固定 */
+  max-width: 100% !important;
+  height: 40px !important;       /* 縦の時と同じ高さを維持 */
+  display: flex !important;
+  align-items: center;
+  
+  /* 9秒かけて1周するアニメーション（無限ループ） */
+  animation: newsTickX 9s ease-in-out infinite !important;
+}
+
+/* 3. マウスを乗せたときは一時停止 */
+.news_list:hover .post {
+  animation-play-state: paused !important;
+}
+
+/* 4. 「動いて、止まる」を繰り返す時間配分（横スライド専用） */
+@keyframes newsTickX {
+  0%, 28% { transform: translateX(0); }
+  33%, 61% { transform: translateX(-100%); }
+  66%, 94% { transform: translateX(-200%); }
+  100% { transform: translateX(0); }
+}
+
+/* 5. 文字が途中で折れないようにするお守り */
+.post--ttl, .post--link {
+  white-space: nowrap !important;
+}
+
+/* ==========================================
+   ⚠️【チラ見え防止＋角丸復活】右の丸みに文字を絶対に入らせない壁
+   ========================================== */
+.news_list::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 35px; /* 👈 文字を消しすぎないように、幅を35pxに狭くしました */
+  height: 100%;
+  
+  /* ⭕【カラーコード完全一致】あなたのサイトの正確な背景色に変更しました */
+  background: #fdf2f2 !important; 
+  
+  /* 👈 右側だけをピンクの背景と完全に同じ丸みで切り抜きます */
+  border-radius: 0 20px 20px 0 !important; 
+  
+  pointer-events: none;
+  z-index: 2;
+}
+.home_message--txt {
+  /* margin-left を使うことで、左側に余白を作り、全体を右へ押し出します */
+  margin-left: auto !important;
+  margin-right: -30% !important; /* 👈ここを調整して右寄せの強さを変えられます */
+  width: fit-content !important; /* 文字の幅に合わせて箱のサイズを自動調整 */
+}
+.message--circle {
+  /* 1. 親要素の影響を受けないよう、画面全体の基準にする */
+  position: absolute !important; 
+  
+  /* 2. 重なり順とクリック透過 */
+  z-index: -1 !important;
+  pointer-events: none !important;
+
+  /* 3. 大きさの設定 */
+  width: 700px !important;
+  height: 700px !important;
+  object-fit: contain !important;
+
+  /* 4. 位置の調整（ここが重要） */
+  /* スクロールに合わせて動くようにするには、topとleftで画面の絶対位置を指定します */
+  top: 250px !important;   /* 上から何pxの場所に置くか */
+  left: 350px !important;  /* 左から何pxの場所に置くか */
+  
+  /* 固定解除 */
+  right: auto !important;
+  bottom: auto !important;
+  margin: 0 !important;
+}
+
+/* SVGの中身を箱に合わせる */
+.message--circle svg {
+  width: 100% !important;
+  height: 100% !important;
+}
+.interview--num {
+  position: absolute !important;
+  top: 0 !important;
+  
+  /* 左にずらすには、leftをマイナス方向に調整します */
+  left: -20px !important;  /* この数字を小さく(マイナスに)するほど左へ移動します */
+  
+  z-index: 10 !important;
+}
